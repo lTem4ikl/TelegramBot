@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 import sqlite3
 
-bot = telebot.TeleBot('7020103895:AAEKOpg07idMUJu3RY7lvMLEY29UmhfYCoM')
+bot = telebot.TeleBot('TOKEN')
 
 id = None
 turName = None
@@ -128,7 +128,7 @@ def GO(message):
 @bot.message_handler(content_types=['text'])
 def checkText(message):
     # global inlineKeybord
-    admin = ['lT_e_m_4_i_kl', 'Okaykay123456', 'turatvv', 'Mr_BUDDA']
+    admin = ['lT_e_m_4_i_kl']
     
     if message.text == 'Мои турниры 🔒' and message.from_user.username in admin:
         inlineKeybord = types.InlineKeyboardMarkup()
@@ -136,7 +136,7 @@ def checkText(message):
         inlineKeybord.add(Ilbtn)
         bot.reply_to(message, '• Ваши турниры •', reply_markup=inlineKeybord)
 
-    elif message.text == 'Мои турниры 🔒' and message.from_user.username != 'lT_e_m_4_i_kl' or message.from_user.username == 'Okaykay123456':
+    elif message.text == 'Мои турниры 🔒' and message.from_user.username != 'lT_e_m_4_i_kl':
         bot.reply_to(message, '• У вас нету доступа к данному разделу •')
         
 
